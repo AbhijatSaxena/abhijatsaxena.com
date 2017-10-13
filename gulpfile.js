@@ -21,7 +21,7 @@ gulp.task('deploy', function() {
             '!gulpfile.js',
             '!package-lock.json',
             '!package.json',
-            '/**/*.*'
+            './**/*.*'
         ], {base : 'app', buffer: false})
         .pipe(conn.newer(remotePath))
         .pipe(conn.dest(remotePath));
