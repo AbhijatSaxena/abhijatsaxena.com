@@ -1,6 +1,6 @@
 {
   "name": "abhijatsaxena.com",
-  "description": "my official website",
+  "description": "My Official Website",
   "version": "1.0.0",
   "scripts": {
     "test": "node startup.js"
