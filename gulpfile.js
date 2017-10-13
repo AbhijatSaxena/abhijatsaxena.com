@@ -16,11 +16,12 @@ gulp.task('deploy', function() {
             '!node_modules/**/*.*',
             '!.gitignore',
             '!.travis.yml',
-            '!LICENSE',
-            '!README.md',
             '!gulpfile.js',
+            '!LICENSE',
+            '!package.json',
             '!package-lock.json',
-            '!package.json'
+            '!README.md',
+            './**/*.*'
         ], {base : 'app', buffer: false})
         .pipe(conn.newer(remotePath))
         .pipe(conn.dest(remotePath));
