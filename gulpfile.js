@@ -18,11 +18,9 @@ gulp.task('deploy', function() {
             '!.travis.yml',
             '!LICENSE',
             '!README.md',
-            '!deploy.sh',
             '!gulpfile.js',
             '!package-lock.json',
             '!package.json',
-            '!startup.js',
             './**/*.*'
         ])
         .pipe(conn.newer(remotePath))

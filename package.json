@@ -2,9 +2,6 @@
   "name": "abhijatsaxena.com",
   "description": "My Official Website",
   "version": "1.0.0",
-  "scripts": {
-    "test": "node startup.js"
-  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-util": "^3.0.8",
