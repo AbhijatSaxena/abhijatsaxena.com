@@ -11,20 +11,21 @@ gulp.task('deploy', function() {
         log: gutil.log
     });
 
-    gulp.src([
-        '!node_modules/**/*.*',
-        '!.gitignore',
-        '!.travis.yml',
-        '!LICENSE',
-        '!README.md',
-        '!deploy.sh',
-        '!gulpfile.js',
-        '!package-lock.json',
-        '!package.json',
-        '!startup.js',
-        './**/*.*'
-    ])
+    conn.rmdir(remotePath, function(){
+        gulp.src([
+            '!node_modules/**/*.*',
+            '!.gitignore',
+            '!.travis.yml',
+            '!LICENSE',
+            '!README.md',
+            '!deploy.sh',
+            '!gulpfile.js',
+            '!package-lock.json',
+            '!package.json',
+            '!startup.js',
+            './**/*.*'
+        ])
         .pipe(conn.newer(remotePath))
-        .pipe(conn.dest(remotePath))
-        .pipe(conn.clean(remotePath, ''));
+        .pipe(conn.dest(remotePath));
+    });
 });
