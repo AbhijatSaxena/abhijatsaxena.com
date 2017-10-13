@@ -2,6 +2,7 @@
 
 echo "Deploy Script Started"
 echo $FTP_USER
+echo $FTP_PASS
 
 gitLastCommit=$(git show --summary --grep="Merge pull request")
 if [[ -z "$gitLastCommit" ]]
