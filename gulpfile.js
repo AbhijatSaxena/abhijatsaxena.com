@@ -20,8 +20,7 @@ gulp.task('deploy', function() {
             '!README.md',
             '!gulpfile.js',
             '!package-lock.json',
-            '!package.json',
-            './**/*.*'
+            '!package.json'
         ], {base : 'app', buffer: false})
         .pipe(conn.newer(remotePath))
         .pipe(conn.dest(remotePath));
