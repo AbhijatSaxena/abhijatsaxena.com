@@ -5,7 +5,7 @@ var gutil = require('gulp-util');
 gulp.task('deploy', function() {
     var remotePath = '/htdocs/';
     var conn = ftp.create({
-        host: 'ftp.byethost14.com',
+        host: process.env.FTP_HOST,
         user: process.env.FTP_USER,
         password: process.env.FTP_PASS,
         log: gutil.log
