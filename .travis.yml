@@ -1,13 +1,13 @@
 language: node_js
 node_js:
-  - "0.11"
-# whitelist
+- '0.11'
 branches:
   only:
-    - master
-  
+  - master
 before_install:
-  - chmod +x deploy.sh 
- 
+- chmod +x deploy.sh
 after_success:
-  - ./deploy.sh 
+- ./deploy.sh
+env:
+  global:
+    secure: hhF0udMqObJBra8k68yG9ckWtUDDtQKqvp8fSDQf5Uq1J6RekgT91GYDobPrLM6Fkp0yEXwU/gJ6zeB4qSsp7HT+m4+cRGDpchQZkwWGTHEmvO8c3aoWrI12ZoaiB88uVbNGCGUSHX9Mi2HFdaBaQGklW+Z8EuTVaO2xjt0S0ER3Tbjt3Dg1plycD5i03jDs4vYKan9wO2y2YyEOETdjfpn/qQInARY0YoMd2j6bv6/g+/aFbZ+w1R6XsXeGwCiPUx32MVirRaHN5xRm4lA/DtFdodKGkVOlrrjG2TYxHuhCqyQZuSHKAF5uAz5U+CL3CN+ytQCjIs2WK7B83Y0rcSoRBgcdtIQhywkpeURiWtL+rziyIWVSbSxQ3P4HgHg5GPo3w697W0OOdZ1U8pBpRU17k2OY+zH5MIzjyrvpC52QlG2pcv8vSyuekqZZzc6i66W2YrAfdvF1tXrZNP+uSsEXjsp3xI5O1Fshpo+c/dZoLNuTiAUpSQZfAXPgCljBm1EeJoM5mZA5Wvy1IEgnq+7nVgNWvppBHWolwGtCen+hAt+IP+Nc6RnjEauxHYuLpF5PhJ+x4s8VlDxyoq6Qxajo4go6s6QBxk7CIVoHEAQXFQt+V9RMOp3jrscdxZ4DK8+ka1OXoe1D8M3cj9qgzhz5z59X4VIj+3naSlZOqIo=
