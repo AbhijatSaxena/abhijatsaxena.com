@@ -23,7 +23,6 @@ gulp.task('deploy', function() {
             '!README.md',
             './**/*.*'
         ], {base : 'app', buffer: false})
-        .pipe(conn.newer(remotePath))
         .pipe(conn.dest(remotePath));
     });
 });
