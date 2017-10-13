@@ -10,6 +10,7 @@ gulp.task('deploy', function() {
         password: process.env.FTP_PASS,
         log: gutil.log
     });
+
     gulp.src([
         '!node_modules/**/*.*',
         '!.gitignore',
@@ -24,5 +25,6 @@ gulp.task('deploy', function() {
         './**/*.*'
     ])
         .pipe(conn.newer(remotePath))
-        .pipe(conn.dest(remotePath));
+        .pipe(conn.dest(remotePath))
+        .pipe(conn.clean(remotePath, ''));
 });
