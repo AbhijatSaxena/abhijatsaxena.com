@@ -19,11 +19,10 @@ filesChanged=$(git diff-tree --no-commit-id --name-only -r $lastCommit)
 if [ ${#filesChanged[@]} -eq 0 ]; then
     echo "No files to update"
 else
+    echo $filesChanged
     for f in $filesChanged
 	do
-	    echo f
-
-		#do not upload these files that aren't necessary to the site
+	    #do not upload these files that aren't necessary to the site
 		if [ "$f" != ".gitignore" ] &&
 		[ "$f" != ".travis.yml" ] &&
 		[ "$f" != "deploy.sh" ] &&
