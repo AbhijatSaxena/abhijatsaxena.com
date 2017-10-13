@@ -2,17 +2,14 @@ var gulp = require('gulp');
 var ftp = require('vinyl-ftp');
 var gutil = require('gulp-util');
 var minimist = require('minimist');
-var args = minimist(process.argv.slice(2));
+// var args = minimist(process.argv.slice(2));
 
 gulp.task('deploy', function() {
-
-    process.stdout.write("Hello");
-
-    var remotePath = '/public_html/';
+var remotePath = '/public_html/';
     var conn = ftp.create({
         host: 'ftp.byethost14.com',
-        user: args.user,
-        password: args.password,
+        user: process.env.FTP_USER,
+        password: process.env.FTP_PASS,
         log: gutil.log
     });
     gulp.src(['index.html', './**/*.css'])
