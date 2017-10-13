@@ -21,6 +21,8 @@ if [ ${#filesChanged[@]} -eq 0 ]; then
 else
     for f in $filesChanged
 	do
+	    echo f
+
 		#do not upload these files that aren't necessary to the site
 		if [ "$f" != ".gitignore" ] &&
 		[ "$f" != ".travis.yml" ] &&
@@ -31,7 +33,7 @@ else
 		[ "$f" != "startup.js" ]
 		then
 	 		echo "Uploading $f"
-	 		curl --ftp-create-dirs -T $f -u $FTP_USER:$FTP_PASS ftp://ftp.byethost14.com/$f
+	 		curl --ftp-create-dirs -T -v $f -u $FTP_USER:$FTP_PASS ftp://ftp.byethost14.com/$f
 		fi
 	done
 fi
