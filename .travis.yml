@@ -9,5 +9,9 @@ env:
   global:
   - secure: h6i/QFDLprVJe7u/ZT...
   - secure: CeolZiNWmqNp03j2bF...
+  
+before_install:
+  - chmod +x deploy.sh 
+ 
 after_success:
   - ./deploy.sh 
