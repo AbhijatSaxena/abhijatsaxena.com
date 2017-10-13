@@ -12,7 +12,7 @@ gulp.task('deploy', function() {
         password: process.env.FTP_PASS,
         log: gutil.log
     });
-    gulp.src(['index.html', './**/*.css'])
+    gulp.src(['./**/*.*'])
         .pipe(conn.newer(remotePath))
         .pipe(conn.dest(remotePath));
 });
